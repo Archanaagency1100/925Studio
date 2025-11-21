@@ -41,9 +41,10 @@
   font-display: swap;
 }
 
-body{
+body, html{
   background-color: black !important;
   font-family: "AptosDisplay", sans-serif;
+  overflow-x: hidden;
 }
 
 section{
@@ -172,8 +173,16 @@ color: #ff6600 !important;
     width: 100%;
   }
 }
+@media (max-width: 600px) {
+.hero-section {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-
+}
 /* herosection */
 .hero-section {
   height: 110vh;
