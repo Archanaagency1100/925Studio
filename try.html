@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee-Style Scroll Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: marquee-scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+         
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            margin: 0 0.5rem;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        img{
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        /* .marquee-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        } */
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        button {
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            margin-top: 2rem;
+            line-height: 1.7;
+        }
+
+        .content-section h2 {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <img src="img/linked in logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/loxo logo.png" class="img-fluid">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/lusha logo.png" class="img-fluid">
+                </div>
+                <div class="marquee-item">
+                    <img src="img\Microsoft_logo.svg.png" class="img-fluid">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/paradox.png" class="img-fluid" alt="">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/seek logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/sourcer logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/twilio logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="marquee-item">
+                    <img src="img/zapier logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+       
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const marqueeContent = document.querySelector('.marquee-content');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const resumeBtn = document.getElementById('resumeBtn');
+            const fasterBtn = document.getElementById('fasterBtn');
+            const slowerBtn = document.getElementById('slowerBtn');
+            
+            let animationSpeed = 20;
+            
+            pauseBtn.addEventListener('click', function() {
+                marqueeContent.style.animationPlayState = 'paused';
+            });
+            
+            resumeBtn.addEventListener('click', function() {
+                marqueeContent.style.animationPlayState = 'running';
+            });
+            
+            fasterBtn.addEventListener('click', function() {
+                animationSpeed = Math.max(animationSpeed - 5, 5);
+                marqueeContent.style.animationDuration = `${animationSpeed}s`;
+            });
+            
+            slowerBtn.addEventListener('click', function() {
+                animationSpeed = Math.min(animationSpeed + 5, 60);
+                marqueeContent.style.animationDuration = `${animationSpeed}s`;
+            });
+        });
+    </script>
+</body>
+</html>

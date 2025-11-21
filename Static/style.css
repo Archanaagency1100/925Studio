@@ -1,0 +1,379 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+  font-family: "Babylon5";
+  src: url("./fonts/B5______.woff") format("woff");
+  font-weight: 400;  
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: "impact";
+  src: url("./fonts/impact.woff") format("woff");
+  font-weight: 400;  
+  font-style: normal;
+  font-display: swap; 
+
+}
+@font-face {
+  font-family: "AptosDisplay";
+  src: url("./fonts/AptosDisplay.woff2") format("woff2");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AptosDisplay";
+  src: url("./fonts/AptosDisplay.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AptosDisplay";
+  src: url("./fonts/AptosDisplay.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+  background-color: black !important;
+  font-family: "AptosDisplay", sans-serif;
+}
+
+section{
+  padding: 20px 0;
+}
+/* ---------------- NAVBAR ---------------- */
+.custom-nav {
+  background: linear-gradient(150deg, rgb(32, 31, 31) 18%, #fff 40%, white 90%);
+  padding: 12px 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1000;
+
+}
+
+.custom-nav .navbar-brand img {
+  height: 75px;
+}
+
+/* Desktop Links */
+.custom-nav .nav-link {
+     font-family: "AptosDisplay", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  /* font-size: 15px; */
+  position: relative;
+  color: black !important;
+  font-weight: 500;
+  display: inline-block;
+  padding: 10px 35px;
+  transition: transform 0.15s ease-out, color 0.3s;
+}
+.custom-nav .nav-link::after {
+   content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ff6600;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+
+}
+
+.custom-nav .nav-link:hover::after {
+   width: 60%;
+}
+.custom-nav .nav-link:hover {
+color: #ff6600 !important;
+}
+
+/* ---------------- HAMBURGER ---------------- */
+.custom-nav .navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  padding: 0;
+  display: none; /* hidden on desktop */
+  background: transparent;
+  box-shadow: none !important;
+  z-index: 9999;
+}
+
+.custom-nav .navbar-toggler .bar {
+  width: 30px;
+  height: 3px;
+  background: #ff6600;
+  display: block;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* ---------------- MOBILE MENU ---------------- */
+@media (max-width: 991px) {
+
+  /* Show hamburger */
+  .custom-nav .navbar-toggler {
+    display: block;
+  }
+
+  /* Hide desktop collapse */
+  #navMenu {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.959);
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+  }
+
+  #navMenu ul li {
+    margin: 12px 0;
+
+  }
+
+  /* Toggle active menu */
+  #navMenu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Hamburger animation */
+  .navbar-toggler.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .navbar-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Hide desktop nav links */
+  .navbar-nav {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+/* herosection */
+.hero-section {
+  height: 110vh;
+  background:radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.315), rgb(0, 0, 0), rgba(0, 0, 0, 0.89)), url('../Assets/925bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+.hero-section img {
+  top: 100px;
+  max-width: 50%;
+  height: auto;
+}
+#topdescription{
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  margin-top: -100px;
+  margin-bottom: 40px;
+  padding-top:30px ;
+  font-family: "AptosDisplay", sans-serif;
+ background: linear-gradient( rgba(255, 255, 255, 0.021), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+ #topdescription a{
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    cursor: pointer;
+
+  }
+ 
+  /* ------------- Services Section ------------- */
+  #services{
+    background: radial-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.918)), url('../Assets/bg-2.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 50px 0;
+  }
+
+ #services h3{
+  color: white;
+  /* font-family: "Babylon5"; */
+  font-family: Impact,  sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  text-shadow: #000000 2px 2px 4px;
+ font-style: italic;
+ margin-bottom: 0px;
+ /* letter-spacing: 2px; */
+ }
+ #services P{
+  color: rgb(7, 253, 19);
+  /* font-family: "Babylon5"; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-shadow: #000000 2px 2px 4px;
+ 
+ }
+ #services .pinkheading{
+  color: #ff00b4;
+  text-shadow:#ffffff 1px 1px 0px;
+ }
+
+ #services .col-md-6>div{
+  border: 1px solid black;
+  padding: 20px;
+   aspect-ratio: 540 / 340;
+    width: 100%;
+  margin-bottom: 15px;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+ }
+
+ #studiorent{
+  background:  url('../Assets/studio_on_rent.png') no-repeat center center/cover;
+ }
+
+  #podcast_production{
+    background: url('../Assets/Video-Podcast-Production-2189px.png') no-repeat center center/cover;
+  }
+
+ #audio_video_recording{
+    background: url('../Assets/audio&video_recording.png') no-repeat center center/cover;
+ }
+
+ #editing_vfx{
+    background: url('../Assets/editing&vfx.png') no-repeat center center/cover;
+ }
+
+ #foley_special_effect{
+    background: url('../Assets/foley&specialeffect.jpg') no-repeat center center/cover;
+ }
+
+ #production_design{
+    background: url('../Assets/production_design.jpg') no-repeat center center/cover;
+ }
+
+ #online_editing{
+    background: url('../Assets/online_editing.png') no-repeat center center/cover;
+ }
+ #creative_development{
+    background: url('../Assets/creative_development.png') no-repeat center center/cover;
+ }
+ #content_creation{
+    background: url('../Assets/content_creation.jpg') no-repeat center center/cover;
+ }
+
+
+ /* ----------Production Logos ---------  */
+ .our_production{
+   position: relative;
+  z-index: 1;
+ }
+.our_production::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, black);
+}
+.our_production .container-fluid h2{
+
+ color: white;
+  /* font-family: "Babylon5"; */
+  font-family: Impact,  sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  text-shadow: #000000 2px 2px 4px;
+ /* font-style: italic; */
+ margin-bottom: 70px;
+}
+ 
+ .logo_box>img{
+ height: 100px;
+ width: auto;
+ margin-bottom: 30px;
+ }
+
+
+ /* ---footer---- */
+ .footer-section {
+  font-family: "AptosDisplay", sans-serif;
+   position: relative;
+  z-index: 2;
+  background: url("../Assets/footerbg.jpg");
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.footer-logo {
+  max-width: 180px;
+}
+
+.footer-section h5 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+.footer-section ul li:hover {
+  opacity: 1;
+  padding-left: 4px;
+  color: #ff6600;
+}
+
+.footer-section span {
+  color: #ff6600;
+  line-height: 2px;
+}
+.footer-section p,
+.footer-section li {
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    max-width: 140px;
+  }
+}
