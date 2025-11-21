@@ -327,7 +327,7 @@ color: #ff6600 !important;
   font-family: "AptosDisplay", sans-serif;
    position: relative;
   z-index: 2;
-  background: url("../Assets/footerbg.jpg");
+  /* background: url("../Assets/footerbg.jpg"); */
   background-position: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
