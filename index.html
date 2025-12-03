@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <nav class="custom-nav navbar navbar-expand-lg sticky-top">
+    <nav class="custom-nav navbar navbar-expand-lg fixed-top">
       <div class="container" >
         <!-- Logo -->
          <!-- <div data-aos="flip-left" data-aos-duration="2500"> -->
@@ -46,27 +46,34 @@
     </nav>
 
     <!-- -----Herosection----- -->
-    <section class="hero-section">
-      <div class="container-fluid">
+    <section class="hero-section relative">
+      <div class="container-fluid ">
     <div data-aos="fade-down"
      data-aos-easing="linear"
-     data-aos-duration="1500">
+     data-aos-duration="1500" class="">
 
-        <img class="img-fluid d-none d-md-block" src="./Assets/925lg.png" alt="" />
+        <img class="img-fluid top-img" src="./Assets/925lg.png" alt="" />
         </div>
        <div data-aos="fade-right"
      data-aos-offset="300"
      data-aos-duration="600" 
      data-aos-easing="ease-out-cubic"
      data-aos-delay="1700">
-  <img class="img-fluid w-25 ms-4 d-none d-md-block" src="./Assets/Agencylogo.png" alt="">
+  <img class="img-fluid absolute ms-3 w-25 w-md-50 " src="./Assets/Agencylogo.png" alt="">
 </div>
 
-        <!-- <h1 class="display-4 fw-bold">Welcome to 925Studio</h1>
-    <p class="lead mt-3">Crafting Digital Experiences with Creativity and Precision</p>
-    <a href="#" class="btn btn-primary btn-lg mt-4">Get Started</a> -->
-      </div>
-    </section>
+<!-- <h1 class="display-4 fw-bold">Welcome to 925Studio</h1>
+<p class="lead mt-3">Crafting Digital Experiences with Creativity and Precision</p>
+<a href="#" class="btn btn-primary btn-lg mt-4">Get Started</a> -->
+</div>
+ <div data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-duration="600" 
+     data-aos-easing="ease-out-cubic"
+     data-aos-delay="1750">
+<img class="img-fluid splash d-block d-xl-none" src="./Assets/splash.png" alt="">
+</div>
+</section>
 
     <div data-aos="fade-up"  data-aos-duration="1500"
      data-aos-anchor-placement="bottom-bottom">
@@ -222,6 +229,10 @@
       </div>
     </section>
 
+    <section >
+
+    </section>
+
   <!-- FOOTER START -->
   <footer class="footer-section">
     <div class="container-fluid px-5">
@@ -351,20 +362,20 @@
       </div>
 
       <!-- BOTTOM LINKS -->
-      <div class="footer-bottom row">
-        <div class="col-md-4 d-flex flex-wrap">
-          <a href="#" class="footer-bottom-link me-2 border-right">Terms & Conditions</a>
-          <a href="#" class="footer-bottom-link mx-2 border-right">Privacy Policy</a>
-          <a href="#" class="footer-bottom-link me-2 border-right">Manage Cookie Performances</a>
+      <div class="footer-bottom gy-3 row">
+        <div class="col-md-4  d-flex">
+          <a href="#" class="footer-bottom-link fs-sm-6 pe-2  border-end">Terms & Conditions </a>
+          <a href="#" class="footer-bottom-link px-2 fs-sm-6 border-end">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link ps-2 me-2 fs-sm-6 ">Manage Cookie Performances </a>
         </div>
 
-        <div class="col-md-4 d-flex flex-wrap justify-content-center footer-bottom-link">
+        <div class="col-md-4 d-flex flex-wrap justify-content-md-center footer-bottom-link">
          
             All rights reserved with 925 Studio - INDIA 2025
       
         </div>
 
-        <div class="col-md-4 d-flex justify-content-end footer-bottom-link">
+        <div class="col-md-4 d-flex justify-content-md-end footer-bottom-link">
           Disclaimer | Privacy Policy
         </div>
       </div>
