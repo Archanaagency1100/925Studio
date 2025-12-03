@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    /* border: 2px solid green; */
 }
 @font-face {
   font-family: "Babylon5";
@@ -18,35 +19,37 @@
 
 }
 @font-face {
-  font-family: "AptosDisplay";
-  src: url("./fonts/AptosDisplay.woff2") format("woff2");
+  font-family: "AVC";
+  src: url("./fonts/AcuminVariableConcept.woff2") format("woff2");
   font-weight: bolder;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "AptosDisplay";
-  src: url("./fonts/AptosDisplay.woff2") format("woff2");
+  font-family: "AVC";
+  src: url("./fonts/AcuminVariableConcept.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "AptosDisplay";
-  src: url("./fonts/AptosDisplay.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 body, html{
-  background-color: black !important;
-  font-family: "AptosDisplay", sans-serif;
+  /* background-color: black !important; */
+  /* font-family: "AptosDisplay", sans-serif; */
   overflow-x: hidden;
+   background: radial-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.918)), url('../Assets/bg-2.png') no-repeat center center/cover;
 }
 
+.heading{
+   font-family: "AVC";
+    font-size: 4em;
+    font-weight:600;
+    letter-spacing: 1px;
+    color: rgb(165, 163, 163);
+}
 
 /* ---------------- NAVBAR ---------------- */
 .custom-nav {
@@ -197,8 +200,8 @@ color: #ff6600 !important;
   font-weight: 500;
   color: white;
   margin-top: -100px;
-  margin-bottom: 40px;
-  padding-top:30px ;
+  /* margin-bottom: 40px; */
+  padding:30px 0px;
   font-family: "AptosDisplay", sans-serif;
  background: linear-gradient( rgba(255, 255, 255, 0.021), rgb(0, 0, 0), rgb(0, 0, 0));
 }
@@ -215,11 +218,11 @@ color: #ff6600 !important;
  
   /* ------------- Services Section ------------- */
   #services{
-    background: radial-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.918)), url('../Assets/bg-2.png') no-repeat center center/cover;
     background-attachment: fixed;
-    padding: 50px 0;
+    /* padding: px 0; */
   }
 
+ 
  #services h3{
   color: white;
   /* font-family: "Babylon5"; */
@@ -303,17 +306,7 @@ color: #ff6600 !important;
   padding-bottom: 60px;
  }
 
-.our_production .container-fluid h2{
 
- color: white;
-  /* font-family: "Babylon5"; */
-  font-family: Impact,  sans-serif;
-  font-weight: 300;
-  font-size: 3rem;
-  text-shadow: #000000 2px 2px 4px;
- /* font-style: italic; */
- margin-bottom: 70px;
-}
  
  .logo_box>img{
  height: 100px;
@@ -323,49 +316,96 @@ color: #ff6600 !important;
 
 
  /* ---footer---- */
- .footer-section {
-  font-family: "AptosDisplay", sans-serif;
-   position: relative;
-  z-index: 2;
-  /* background: url("../Assets/footerbg.jpg"); */
-  background-position: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* border-top:1px solid #ff6600; */
-}
+  .footer-section {
+      background: #000;
+      color: #eee;
+      font-family: 'AVC', sans-serif;
+      padding: 60px 0px 30px 0px;
+    }
 
-.footer-logo {
-  max-width: 180px;
-}
+    .footer-col {
+      padding-left: 30px;
+    }
 
-.footer-section h5 {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
+    .footer-logo {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-.footer-section ul li {
-  margin-bottom: 6px;
-  opacity: 0.85;
-  transition: 0.2s ease;
-}
+    footer-menu {
+      margin-top: 20px;
+    }
 
-.footer-section ul li:hover {
-  opacity: 1;
-  padding-left: 4px;
-  color: #ff6600;
-}
+    .footer-menu .sideline {
+      border-right: 2px solid rgb(255, 115, 0);
+    }
 
-.footer-section span {
-  color: #ff6600;
-  line-height: 2px;
-}
-.footer-section p,
-.footer-section li {
-  line-height: 1.5;
-}
+    .footer-title {
+      width: 250px;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
 
-@media (max-width: 768px) {
-  .footer-logo {
-    max-width: 140px;
-  }
-}
+    .footer-address,
+    .footer-small {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-list {
+      list-style: none;
+      padding-left: 0;
+      width: 250px;
+    }
+
+    .footer-list li {
+      font-size: 14px;
+      margin-bottom: 4px;
+      opacity: 0.8;
+    }
+
+    .footer-bottom {
+      /* border-top: 1px solid rgba(255, 166, 0, 0.4); */
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
+    .footer-bottom-link {
+      font-size: 13px;
+      color: #eee;
+      /* opacity: 0.6; */
+      text-decoration: none;
+    }
+
+    .footer-bottom-link:hover {
+      opacity: 1;
+    }
+
+
+    /* ========================================
+       RESPONSIVE FONT SIZE UTILITIES ADDED
+       (YOUR HTML NOW WORKS PERFECTLY)
+       ======================================== */
+
+    /* Small Screens (mobile) */
+    @media (max-width: 576px) {
+      .fs-sm-6 { font-size: 12px !important; }
+      .fs-sm-5 { font-size: 14px !important; }
+      .fs-sm-4 { font-size: 16px !important; }
+    }
+
+    /* Medium Screens (tablet) */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .fs-md-6 { font-size: 14px !important; }
+      .fs-md-5 { font-size: 16px !important; }
+      .fs-md-4 { font-size: 18px !important; }
+    }
+
+    /* Large Screens (desktop) */
+    @media (min-width: 769px) {
+      .fs-lg-6 { font-size: 16px !important; }
+      .fs-lg-5 { font-size: 18px !important; }
+      .fs-lg-4 { font-size: 22px !important; }
+    }
