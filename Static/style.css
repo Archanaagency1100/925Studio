@@ -344,6 +344,47 @@ background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 
  width: auto;
  margin-bottom: 30px;
  }
+ /* Podcaste film slidder */
+ 
+
+   /* Slider Wrapper */
+   .podcast .slider-wrapper {
+      overflow: hidden;
+      margin-top: 50px;
+    }
+
+    /* Track */
+       .podcast .scroll-track {
+      display: flex;
+      width: calc(300px * 16); /* image width * (images × 2) */
+      animation: scroll 30s linear infinite;
+    }
+
+       .podcast .box2 {
+      width: 300px;
+      height: 300px;
+      background-image: url("../Assets/cvrfilm.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+       .podcast .box2 img {
+      width: 290px;
+      height: 230px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 8)); }
+    }
 
 
  /* ---footer---- */
