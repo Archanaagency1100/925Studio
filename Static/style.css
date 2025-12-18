@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    /* border: 2px solid green; */
+    border: 2px solid green;
 }
 @font-face {
   font-family: "Babylon5";
@@ -516,13 +516,18 @@ background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 
     .footer-list {
       list-style: none;
       padding-left: 0;
-      width: 250px;
+      width: 300px;
+        
     }
 
     .footer-list li {
       font-size: 14px;
       margin-bottom: 4px;
       opacity: 0.8;
+      
+    }
+    .lh{
+  line-height: 2;
     }
 
     .footer-bottom {
