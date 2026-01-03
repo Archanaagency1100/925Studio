@@ -32,7 +32,7 @@ function initializeDropdown(dropdownLinkId, dropdownMenuId) {
       }
     });
   } else {
-    // Desktop: use hover with delay to prevent flickering
+    // Desktop: hover behavior with delay
     let timeout;
     dropdownLi.addEventListener("mouseenter", () => {
       clearTimeout(timeout);
@@ -59,31 +59,29 @@ function initializeDropdown(dropdownLinkId, dropdownMenuId) {
     });
   }
 
-  // Close dropdown when clicking on any dropdown item
+  // Close dropdown when clicking any dropdown item
   dropdownMenu.querySelectorAll('.dropdown-item').forEach(item => {
     item.addEventListener('click', () => {
       dropdownMenu.classList.remove('show');
       dropdownLink.setAttribute("aria-expanded", "false");
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
     });
   });
 }
 
-// Initialize services dropdown
-initializeDropdown("servicesLink", "servicesDropdown");
+// ✅ Automatically initialize all dropdowns
+document.querySelectorAll('[id$="Link"]').forEach(link => {
+  const dropdownId = link.id.replace('Link', 'Dropdown');
+  initializeDropdown(link.id, dropdownId);
+});
 
-// Close hamburger menu when clicking on any navigation link (except services dropdown)
-document.querySelectorAll('#navMenu .nav-link:not(#servicesLink)').forEach(link => {
+// ✅ Close hamburger menu when clicking on any nav link (that’s not a dropdown trigger)
+document.querySelectorAll('#navMenu .nav-link').forEach(link => {
   link.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (!link.id.endsWith("Link")) {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
   });
 });
-
-// Close hamburger menu when clicking on any service item
-document.querySelectorAll('#servicesDropdown .dropdown-item').forEach(item => {
-  item.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    navMenu.classList.remove('active');
-  });
-});
-

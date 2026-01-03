@@ -1,0 +1,213 @@
+
+body, html{
+  /* background-color: black !important; */
+  /* font-family: "AptosDisplay", sans-serif; */
+  overflow-x: hidden;
+   background: radial-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.918)), url('../Assets/bg-2.png') no-repeat center center/cover;
+
+}
+
+@media (max-width: 768px) {
+  .hero-section{
+background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.616), rgb(0, 0, 0)), url('../Assets/925bg.jpg') no-repeat center center/cover;
+
+
+  }
+.hero-section  .container-fluid{
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.splash{
+ margin-top: -35px;
+  float: right;
+  width: 70% !important;
+}
+.hero-section .top-img{
+   margin-top: 200px !important;
+   width: 80% !important;
+ 
+}
+.hero-section .sub-img {
+  
+ width: 60% !important;
+ 
+}
+
+}
+/* herosection */
+.hero-section {
+  height: 110vh;
+  background:radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.315), rgb(0, 0, 0), rgba(0, 0, 0, 0.89)), url('../Assets/925bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+.hero-section .top-img{
+   margin-top: 150px;
+ width: 40%;
+
+}
+.hero-section .sub-img {
+  
+ width: 30%;
+ 
+}
+#topdescription{
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  margin-top: -100px;
+  /* margin-bottom: 40px; */
+  padding:30px 0px;
+  font-family: "AptosDisplay", sans-serif;
+ background: linear-gradient( rgba(255, 255, 255, 0.021), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+ #topdescription a{
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    cursor: pointer;
+
+  }
+ 
+  /* ------------- Services Section ------------- */
+  #services{
+    background-attachment: fixed;
+    /* padding: px 0; */
+  }
+
+ 
+ #services h3{
+  color: white;
+  /* font-family: "Babylon5"; */
+  font-family: Impact,  sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  text-shadow: #000000 2px 2px 4px;
+ font-style: italic;
+ margin-bottom: 0px;
+ /* letter-spacing: 2px; */
+ }
+ #services P{
+  color: rgb(7, 253, 19);
+  /* font-family: "Babylon5"; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-shadow: #000000 2px 2px 4px;
+ 
+ }
+ #services .pinkheading{
+  color: #ff00b4;
+  text-shadow:#ffffff 1px 1px 0px;
+ }
+
+ #services .col-md-6>div{
+  border: 1px solid black;
+  padding: 20px;
+   aspect-ratio: 540 / 340;
+    width: 100%;
+  margin-bottom: 15px;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+ }
+
+ #studiorent{
+  background:  url('../Assets/studio_on_rent.png') no-repeat center center/cover;
+ }
+
+  #podcast_production{
+    background: url('../Assets/Video-Podcast-Production-2189px.png') no-repeat center center/cover;
+  }
+
+ #audio_video_recording{
+    background: url('../Assets/audio&video_recording.png') no-repeat center center/cover;
+ }
+
+ #editing_vfx{
+    background: url('../Assets/editing&vfx.png') no-repeat center center/cover;
+ }
+
+ #foley_special_effect{
+    background: url('../Assets/foley&specialeffect.jpg') no-repeat center center/cover;
+ }
+
+ #production_design{
+    background: url('../Assets/production_design.jpg') no-repeat center center/cover;
+ }
+
+ #online_editing{
+    background: url('../Assets/online_editing.png') no-repeat center center/cover;
+ }
+ #creative_development{
+    background: url('../Assets/creative_development.png') no-repeat center center/cover;
+ }
+ #content_creation{
+    background: url('../Assets/content_creation.jpg') no-repeat center center/cover;
+ }
+
+
+ /* ----------Production Logos ---------  */
+ .our_production{
+  /* background: linear-gradient(rgba(0, 0, 0, 0.486) 80%, black ,  #ff6600); */
+   position: relative;
+  padding-bottom: 60px;
+ }
+
+
+ 
+ .logo_box>img{
+ height: 100px;
+ width: auto;
+ margin-bottom: 30px;
+ }
+ /* Podcaste film slidder */
+ 
+
+   /* Slider Wrapper */
+   .podcast .slider-wrapper {
+      overflow: hidden;
+      margin-top: 50px;
+    }
+
+    /* Track */
+       .podcast .scroll-track {
+      display: flex;
+      width: calc(300px * 16); /* image width * (images × 2) */
+      animation: scroll 30s linear infinite;
+    }
+
+       .podcast .box2 {
+      width: 300px;
+      height: 300px;
+      background-image: url("../Assets/cvrfilm.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+       .podcast .box2 img {
+      width: 290px;
+      height: 230px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 8)); }
+    }

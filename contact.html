@@ -4,188 +4,530 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Podcast Studio Contact Form</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./Static/style.css" />
+   <link rel="stylesheet" href="./Static/contact.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="./Static/bootstrap-5.3.8-dist/css/bootstrap.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
   <style>
     body {
-      background: radial-gradient(circle at top left, #000 0%, #111 100%);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+      
       font-family: 'Poppins', sans-serif;
-      padding: 20px;
+      background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.616), rgb(0, 0, 0)), url('./Assets/manContactBG.jpg') no-repeat center center/cover;
     }
-
-    /* Animated glowing container */
-    .contact-container {
-      background: rgba(20, 20, 20, 0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 136, 0, 0.3);
-      box-shadow: 0 0 25px rgba(255, 136, 0, 0.25);
-      padding: 40px 35px;
-      max-width: 500px;
+    @font-face {
+  font-family: "AVC";
+  src: url("./fonts/AcuminVariableConcept.woff2") format("woff2");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+    #herosection{
+      /* height: 100vh; */
+      padding-top: 150px;
+      color: white;
       width: 100%;
-      animation: fadeUp 1s ease forwards;
-      transform-origin: center;
+      max-width: 800px;
+    }
+#herosection h1{
+font-size: 128px;
+font-weight: 800;
+font-family: 'AVC';
+color: white;
+text-shadow: 2px 2px 2px black ;
+}
+
+    .contact-form {
+      max-width: 450px;
+    width: 100%;
+      margin-top: 30px;
     }
 
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(60px) scale(0.95); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    h2 {
+    #herosection .form-control {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #aaa;
+      border-radius: 0;
       color: #fff;
-      text-align: center;
-      text-shadow: 0 0 15px #ff8800;
-      margin-bottom: 25px;
-      font-weight: 700;
-      animation: glowText 2s ease-in-out infinite alternate;
+      margin-bottom: 20px;
+      font-size: 15px;
+      padding-left: 0;
     }
 
-    @keyframes glowText {
-      from { text-shadow: 0 0 10px #ff8800, 0 0 20px #cc5500; }
-      to { text-shadow: 0 0 20px #cc5500, 0 0 40px #ff8800; }
+    #herosection .form-control:focus {
+      box-shadow: none;
+      border-color: #ff6600;
+     padding-left: 20px;
+    }
+
+   #herosection::placeholder {
+      color: #bbb;
+    }
+
+    .btn-connect {
+      background: linear-gradient(to right, #000, #333);
+      color: #ff6600;
+      border: none;
+      padding: 8px 25px;
+      transition: all 0.3s;
+    }
+
+    .btn-connect:hover {
+      background: #ff6600;
+      color: #fff;
+      box-shadow: 0 0 10px #ff6600;
+    }
+  .faq-section {
+      max-width: 600px;
+      color: white;
+    }
+
+    
+
+    .accordion-item {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #555;
+    }
+
+    .accordion-button {
+      background: transparent;
+      color: #fff;
+      font-weight: 500;
+      padding: 12px 0;
+      border: none;
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      filter: invert(1) brightness(0.7);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #ff6600;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .accordion-body {
+      color: #bbb;
+      font-size: 14px;
+      padding: 0 0 15px 0;
+    }
+
+    .ask-box {
+      border: 1px solid #ff6600;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 4px;
+    }
+
+    .ask-box h5 {
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 10px;
     }
 
     .form-control {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      color: #fff !important;
-      transition: all 0.3s ease;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0;
     }
 
     .form-control:focus {
-      border-color: #ff8800;
-      box-shadow: 0 0 10px #ff8800, 0 0 30px rgba(255,136,0,0.4);
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: scale(1.03);
+      box-shadow: none;
+      border-color: #ff6600;
     }
 
-    .form-floating > label {
-      color: rgba(255,255,255,0.6);
+    ::placeholder {
+      color: #aaa;
     }
 
-    .form-floating > .form-control:focus ~ label {
-      color: #ff8800;
-    }
-
-    .btn-custom {
-      background: linear-gradient(270deg, #ff8800, #cc5500);
+    .btn-send {
+      background: transparent;
+      color: #ff6600;
       border: none;
-      border-radius: 12px;
-      padding: 12px;
-      width: 100%;
+      padding: 6px 0;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+
+    .btn-send:hover {
       color: #fff;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 10px rgba(255,136,0,0.4);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
+      text-shadow: 0 0 5px #ff6600;
     }
+    @media (max-width: 768px) {
+     body{
+      background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.616), rgb(0, 0, 0)), url('./Assets/manContactBG.jpg') no-repeat center center/cover;  
+   
+     }
+     section{
+      padding: 20px;
+     }
+  #herosection h1{
+font-size: 56px;
+font-weight: 800;
+font-family: 'AVC';
+color: white;
+text-shadow: 2px 2px 2px black ;
+}
 
-    .btn-custom:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255,136,0,0.8);
-      background: linear-gradient(270deg, #cc5500, #ff8800);
-    }
+}
 
-    .btn-custom::before {
-      content: "";
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: rgba(255,255,255,0.15);
-      transform: skewX(-25deg);
-      transition: all 0.5s ease;
-    }
-
-    .btn-custom:hover::before {
-      left: 200%;
-    }
-
-    /* Toast Animation */
-    #sentToast {
-      background: rgba(20,20,20,0.95);
-      border: 1px solid #ff8800;
-      box-shadow: 0 0 20px rgba(255,136,0,0.5);
-      color: #ff8800;
-      animation: toastIn 0.8s ease forwards;
-    }
-
-    @keyframes toastIn {
-      0% { transform: translateY(100px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Sparkle burst animation */
-    .sparkle {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: #ff8800;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkleFly 1s ease-out forwards;
-      z-index: 9999;
-    }
-
-    @keyframes sparkleFly {
-      0% { opacity: 1; transform: scale(1) translate(0,0); }
-      100% { opacity: 0; transform: scale(0.5) translate(var(--x), var(--y)); }
-    }
-
-    @media (max-width: 576px) {
-      .contact-container { padding: 25px 20px; }
-      h2 { font-size: 1.6rem; }
-    }
   </style>
 </head>
 <body>
+    <nav class="custom-nav navbar navbar-expand-lg fixed-top">
+      <div class="container" >
+        <!-- Logo -->
+         <!-- <div data-aos="flip-left" data-aos-duration="2500"> -->
+        <a class="navbar-brand" href="./index.html">
+          <img class="img-fluid" src="./Assets/heroseclogo.png" alt="Logo" />
+        </a>
+       <!-- </div> -->
 
-  <div class="contact-container">
-    <h2>🎙️ Let’s Talk</h2>
-    <form id="contactForm">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-        <label for="name">Name</label>
-      </div>
+        <!-- Hamburger -->
+        <button class="navbar-toggler" id="navToggle" type="button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
 
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-        <label for="email">Email</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="subject" placeholder="Subject">
-        <label for="subject">Subject</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <textarea class="form-control" id="message" style="height: 120px" placeholder="Message" required></textarea>
-        <label for="message">Message</label>
-      </div>
-
-      <button type="submit" class="btn btn-custom">Send Message</button>
-    </form>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="sentToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body fw-semibold">
-          ✅ Message Sent Successfully! 
+        <!-- Menu Items -->
+        <div class="navMobileMenu" id="navMenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesLink">
+                Services <i class="ri-arrow-down-s-line dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu custom-dropdown" id="servicesDropdown">
+                <li><a class="dropdown-item" href="#studiorent">Studio on Rent in Delhi</a></li>
+                <li><a class="dropdown-item" href="#podcast_production">Podcast Production</a></li>
+                <li><a class="dropdown-item" href="#audio_video_recording">Audio & Video Recording</a></li>
+                <li><a class="dropdown-item" href="#editing_vfx">Editing & VFX</a></li>
+                <li><a class="dropdown-item" href="#foley_special_effect">Foley & Special Effects</a></li>
+                <li><a class="dropdown-item" href="#production_design">Production Design</a></li>
+                <li><a class="dropdown-item" href="#online_editing">Online Editing</a></li>
+                <li><a class="dropdown-item" href="#content_creation">Content Creation</a></li>
+                <li><a class="dropdown-item" href="#creative_development">Creative Development</a></li>
+                <li><a class="dropdown-item mb-4" href="#marketing_distribution">Marketing & Distribution</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link mt-1" href="#">Work</a></li>
+               <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="peopleLink">
+        People <i class="ri-arrow-down-s-line dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu custom-dropdown" id="peopleDropdown">
+                <li><a class="dropdown-item" href="#studiorent">Studio on Rent in Delhi</a></li>
+                <li><a class="dropdown-item" href="#podcast_production">Podcast Production</a></li>
+                <li><a class="dropdown-item" href="#audio_video_recording">Audio & Video Recording</a></li>
+             
+              </ul></li>
+            <li class="nav-item"><a class="nav-link mt-1" href="./contact.html">Contact</a></li>
+          </ul>
         </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
       </div>
-    </div>
+    </nav>
+<section id="herosection" class="mx-1 mx-md-5 px-md-5">
+  <h1>Contact Us</h1>
+  <p class="mt-0">For bookings, collaborations, or production inquiries, we’d love to hear from you. Whether you’re an independent creator, a brand, or a production house, our team is here to help you record, produce, and launch your best work.</p>
+  <div class="mt-5 pt-2 mb-2">
+
+    <h3 class="my-3">Studio Bookings</h3>
+    <p class="lh-lg"> 925Studio, New Delhi <br> Book your recording session or studio visit.<br> 📧 bookings@925studio.co 📞 <br> +91 98113 01100 / +91 88005 06107</p>
   </div>
+
+<div class="mt-5 pt-2 mb-2">
+  <h3 class="mt-3">Reach Out – Your Mic Is Waiting!</h3>
+  <p class="mt-3">Ready to Create? We’re Just a Message Away</p>
+  <form class="contact-form">
+    <input type="text" class="form-control" placeholder="Name" required>
+    <input type="email" class="form-control" placeholder="Email" required>
+    <input type="text" class="form-control" placeholder="Phone No." required>
+    <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn btn-connect mt-2">Connect</button>
+  </form>
+
+</div>
+ </section>
+
+  <section class="faq-section text-start my-5 py-5 mx-1 mx-md-5 px-md-5">
+    <h3 class="mb-">Frequently Asked Question</h3>
+
+    <div class="accordion mt-4 mb-5" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            How can I book the studio?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can book the studio by contacting us through our email or phone. We’ll check availability and help you schedule your preferred slot easily.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Do you offer podcast editing and publishing?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! We provide complete post-production services including editing, sound mixing, mastering, and distribution support for Spotify, Apple Podcasts, and YouTube.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Can I rent the studio for my own equipment setup?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Absolutely. You can bring your own equipment and use our studio space. Our team will assist you with setup to ensure the best sound quality.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Do you help with marketing or brand content?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we assist with podcast branding, social media content, and marketing strategies to help your show reach a wider audience.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Do you provide equipment and technical support?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We provide all necessary audio and video recording gear, along with on-site technical support throughout your session.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+            Can I rent the studio for non-podcast projects?
+          </button>
+        </h2>
+        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, our studio is also available for voiceovers, video shoots, interviews, and other creative projects.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ask Box -->
+    <div class="ask-box">
+      <h5>Ask Your Question.</h5>
+      <textarea class="form-control mb-2" rows="4" placeholder="Write Here"></textarea>
+      <button class="btn btn-send">Send It Now...</button>
+    </div>
+  </section>
+  <!-- FOOTER SECTION -->
+
+ <footer class="footer-section">
+    <div class="container-fluid px-5">
+
+      <div class="row">
+
+        <!-- COLUMN 1 -->
+        <div class="col-lg-4 col-md-12 footer-col">
+
+          <div class="footer-logo mb-2 d-none d-md-flex flex-wrap">
+            <img class="w-25" src="./Assets/925lg.png" alt="">
+            <img class="mt-5 img-fluid h-25 w-50 self-bottom" src="./Assets/Agencylogo.png" alt="">
+          </div>
+          <div class="footer-logo mb-2 d-block d-md-none flex-wrap">
+            <img class="w-75" src="./Assets/heroseclogo.png" alt="">
+           
+          </div>
+
+          <div class="d-flex flex-wrap footer-menu">
+            <h5 class="pe-3 sideline fs-md-4 fs-md-5 fs-sm-6">Services</h5>
+            <h5 class="px-3 sideline fs-md-4 fs-md-5 fs-sm-6">Work</h5>
+            <h5 class="px-3 sideline fs-md-4 fs-md-5 fs-sm-6">People</h5>
+            <h5 class="ps-3 fs-md-4 fs-md-5 fs-sm-6">Contact</h5>
+          </div>
+
+          <p class="footer-address">
+            925, Subfloor,<br>
+            Neb Sarai, New Delhi – 110068<br>
+            INDIA<br>
+            +91 9811301100/ 8800506107
+          </p>
+
+          <p class="footer-small">
+            @ 925 Studio, we believe every voice has a story — and every story deserves a professional stage.
+            Our team of sound engineers, editors, and creative consultants work closely with you to craft
+            a podcast that sounds as good as it feels to create.
+          </p>
+
+          <p class="footer-small">
+            Clean, comfortable, and creatively charged — 925 Studio is where ideas turn into conversations,
+            and conversations turn into impact.
+          </p>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="col-md-6 col-lg-4 footer-col">
+
+          <div class="d-flex flex-wrap mt-3 justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">Podcast Production</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-2">
+                <li>Audio & Video Recording</li>
+                <li>Editing & Post-Production</li>
+                <li>Multi-Camera Setup</li>
+                <li>Soundproof Environment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">Studio Rental</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-2">
+                <li>Products & Interviews</li>
+                <li>Audio Shoots</li>
+                <li>Product or Brand Content</li>
+                <li>Voice-Overs & Narrations</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">Creative Development</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-2">
+                <li>Concept & Show Format Creation</li>
+                <li>Scripting & Content Planning</li>
+                <li>Branding, Cover Art, and Title Design</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="col-md-6 col-lg-4 mt-2 footer-col">
+
+          <div class="d-flex flex-wrap  justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">Marketing & Distribution</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-2 me-2">
+                <li class="lh">Publishing on Spotify, Apple Podcasts, YouTube, and other Platforms, Social Media Clips, Reels, and Promotional Content, Podcast SEO, Audience Analytics, and Growth Strategy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap  justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">LiDAR Drone</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-2 me-2">
+                <li class="lh">LiDAR Survey,
+
+3D Mapping,
+
+Topographic Scan,
+
+Aerial Photos,
+
+Aerial Videos,
+
+Site Inspection,
+
+Construction Survey,
+
+Terrain Mapping,
+
+Real Estate Shoots,
+
+Industrial Survey</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap  justify-content-lg-end">
+            <div>
+              <h4 class="footer-title">Professional Add-Ons</h4>
+            </div>
+            <div>
+              <ul class="footer-list mt-0 lg:mt-2">
+                <li>Guest Research & Coordination</li>
+                <li>Voice Training and On-Camera</li>
+                <li>Presentation Guidance</li>
+                <li>Monetization & Sponsorship Support</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM LINKS -->
+      <div class="footer-bottom gy-3 row">
+        <div class="col-md-4  d-flex fw-bold fw-900">
+          <a href="#" class="footer-bottom-link fs-sm-6 pe-2 font-weight-bold border-end">Terms & Conditions </a>
+          <a href="#" class="footer-bottom-link px-2  fs-sm-6 border-end">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link ps-2 me-2 fs-sm-6 ">Manage Cookie Performances </a>
+        </div>
+
+        <div class="col-md-4 d-flex flex-wrap justify-content-md-center footer-bottom-link">
+         
+            All rights reserved with 925 Studio - INDIA 2025
+      
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-md-end footer-bottom-link fw-bold">
+          Disclaimer | Privacy Policy
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -218,5 +560,12 @@
       }
     }
   </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="./Static/js/script.js"></script>
+<script src="./Static/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
