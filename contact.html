@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   </head>
   <style>
-    body {
+     body {
       min-height: 100vh;
       
       font-family: 'Poppins', sans-serif;
-      background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.616), rgb(0, 0, 0)), url('./Assets/manContactBG.jpg') no-repeat center center/cover;
+      background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.616), rgb(0, 0, 0)), url('../Assets/manContactBG.jpg') no-repeat center center/cover;
     }
     @font-face {
   font-family: "AVC";
@@ -94,14 +94,18 @@ text-shadow: 2px 2px 2px black ;
     
 
     .accordion-item {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #555;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid #858484 !important;
+      outline: none !important;
     }
-
+.accordion-button:active{
+    background-color: transparent !important;
+    outline: none !important;
+}
     .accordion-button {
-      background: transparent;
-      color: #fff;
+      background: transparent !important;
+      /* color: #fff; */
       font-weight: 500;
       padding: 12px 0;
       border: none;
@@ -113,7 +117,7 @@ text-shadow: 2px 2px 2px black ;
     }
 
     .accordion-button:not(.collapsed) {
-      color: #ff6600;
+      color: #ff6600 !important;
       background: transparent;
       box-shadow: none;
     }
@@ -151,11 +155,12 @@ text-shadow: 2px 2px 2px black ;
     }
 
     ::placeholder {
-      color: #aaa;
+      color: #ffffff;
+      font-weight: bold;
     }
 
     .btn-send {
-      background: transparent;
+    
       color: #ff6600;
       border: none;
       padding: 6px 0;
@@ -194,11 +199,10 @@ text-shadow: 2px 2px 2px black ;
 }
 
 }
-
   </style>
-</head>
+
 <body>
-    <nav class="custom-nav navbar navbar-expand-lg fixed-top">
+  <nav class="custom-nav navbar navbar-expand-lg fixed-top">
       <div class="container" >
         <!-- Logo -->
          <!-- <div data-aos="flip-left" data-aos-duration="2500"> -->
@@ -217,6 +221,7 @@ text-shadow: 2px 2px 2px black ;
         <!-- Menu Items -->
         <div class="navMobileMenu" id="navMenu">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+              <li class="nav-item"><a class="nav-link mt-1" href="#">About</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="servicesLink">
                 Services <i class="ri-arrow-down-s-line dropdown-icon"></i>
@@ -234,29 +239,22 @@ text-shadow: 2px 2px 2px black ;
                 <li><a class="dropdown-item mb-4" href="#marketing_distribution">Marketing & Distribution</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link mt-1" href="#">Work</a></li>
-               <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="peopleLink">
-        People <i class="ri-arrow-down-s-line dropdown-icon"></i>
-              </a>
-              <ul class="dropdown-menu custom-dropdown" id="peopleDropdown">
-                <li><a class="dropdown-item" href="#studiorent">Studio on Rent in Delhi</a></li>
-                <li><a class="dropdown-item" href="#podcast_production">Podcast Production</a></li>
-                <li><a class="dropdown-item" href="#audio_video_recording">Audio & Video Recording</a></li>
+            <li class="nav-item"><a class="nav-link mt-1" href="#work">Work</a></li>
              
-              </ul></li>
             <li class="nav-item"><a class="nav-link mt-1" href="./contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
+
 <section id="herosection" class="mx-1 mx-md-5 px-md-5">
   <h1>Contact Us</h1>
   <p class="mt-0">For bookings, collaborations, or production inquiries, we’d love to hear from you. Whether you’re an independent creator, a brand, or a production house, our team is here to help you record, produce, and launch your best work.</p>
   <div class="mt-5 pt-2 mb-2">
 
     <h3 class="my-3">Studio Bookings</h3>
-    <p class="lh-lg"> 925Studio, New Delhi <br> Book your recording session or studio visit.<br> <i class="fa-solid fa-envelope"></i> bookings@925studio.co  <br> <i class="fa-solid fa-phone"></i>+91 98113 01100 / +91 88005 06107</p>
+    <p class="lh-lg"> <img class="img-fluid w-25" src="./Assets/heroseclogo.png" alt="Logo" /><br> 9/25, Subfloor,
+ Nehru Place, New Delhi – 110019 <br> Book your recording session or studio visit.<br> <i class="fa-solid fa-envelope"></i> 925studio.co@gmail.com  <br> <i class="fa-solid fa-phone"></i>+91 98113 01100 / +91 88005 06107</p>
   </div>
 
 <div class="mt-5 pt-2 mb-2">
@@ -362,7 +360,7 @@ text-shadow: 2px 2px 2px black ;
     <div class="ask-box">
       <h5>Ask Your Question.</h5>
       <textarea class="form-control mb-2" rows="4" placeholder="Write Here"></textarea>
-      <button class="btn btn-send">Send It Now...</button>
+      <button class="btn-send">Send It Now...</button>
     </div>
   </section>
   <!-- FOOTER SECTION -->
@@ -385,15 +383,15 @@ text-shadow: 2px 2px 2px black ;
           </div>
 
           <div class="d-flex flex-wrap footer-menu">
+            <h5 class="px-3 sideline fs-md-4 fs-md-5 fs-sm-6">About</h5>
             <h5 class="pe-3 sideline fs-md-4 fs-md-5 fs-sm-6">Services</h5>
             <h5 class="px-3 sideline fs-md-4 fs-md-5 fs-sm-6">Work</h5>
-            <h5 class="px-3 sideline fs-md-4 fs-md-5 fs-sm-6">People</h5>
             <h5 class="ps-3 fs-md-4 fs-md-5 fs-sm-6">Contact</h5>
           </div>
 
           <p class="footer-address">
-            925, Subfloor,<br>
-            Neb Sarai, New Delhi – 110068<br>
+            9/25, Subfloor,<br>
+             Nehru Place, New Delhi – 110019<br>
             INDIA<br><i class="fa-solid fa-phone"></i>
             +91 9811301100/ 8800506107
           </p>

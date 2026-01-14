@@ -19,10 +19,17 @@ background:radial-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5), rgba(0, 0, 
   align-items: center;
   text-align: center;
 }
-.splash{
- margin-top: -35px;
+.splash {
+  margin-top: 0;
   float: right;
   width: 70% !important;
+  animation: splashmove 3s ease-in-out infinite; /* ✅ timing + proper order */
+}
+
+@keyframes splashmove {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }  /* goes up */
+  100% { transform: translateY(0); }      /* comes back down */
 }
 .hero-section .top-img{
    margin-top: 200px !important;
