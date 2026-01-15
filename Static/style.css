@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 @font-face {
   font-family: "Babylon5";
@@ -81,8 +81,9 @@ body, html{
 
 /* Dropdown indicator */
 .custom-nav .dropdown-icon {
-  font-size: 1.1em;
-  margin-left: 0px;
+  float: inline-end;
+font-size: 1em;
+    margin-left: 0px;
   color: #ff6600;
   transition: transform 0.3s ease, color 0.3s ease;
   
